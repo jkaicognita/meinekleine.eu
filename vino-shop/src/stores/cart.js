@@ -4,7 +4,7 @@ import {defineStrore} from 'pinia'
 export const userCartStore = defineStore('cart', () => 
   {
     const items = ref([])
-    function ddToCart(wine)
+    function addToCart(wine)
     {
       const existingItem = items.value.find(item) => item.id === wine.id)
       if (existingItem)
