@@ -6,14 +6,21 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(
+{
+	server: {
+    		host: '0.0.0.0', // or true
+	        port: 5173 // your port number
+		  },
+
   plugins: [
     vue(),
     vueJsx(),
     vueDevTools(),
   ],
   resolve: {
-    alias: {
+  alias: 
+  {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
