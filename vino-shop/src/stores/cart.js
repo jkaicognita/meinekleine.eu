@@ -50,10 +50,9 @@ export const useCartStore = defineStore('cart', () =>
 
     const itemcCount = computed(() =>
       items.value.reduce(
-        (sum, item)
-        =>
-        sum + item.quantity, 0)
-        ) 
+        (sum, item) => sum + item.quantity, 0))
+               
+         
     const subtottal = computed(() => items.value.reduce((sum, item) => sum + item.price * item.quntity, 0) )
 
     const shipping = computed(() =>
