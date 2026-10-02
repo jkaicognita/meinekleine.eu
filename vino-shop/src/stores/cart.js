@@ -1,21 +1,28 @@
 import {computed, ref} from 'vue'
-import {defineStrore} from 'pinia'
+import {defineStore} from 'pinia'
 
 export const useCartStore = defineStore('cart', () => 
   {
     const items = ref([])
+
     function addToCart(wine)
     {
-      const existingItem = items.value.find(item) => item.id === wine.id)
+      const existingItem = items.value.find((item) => item.id === wine.id)
+              
+
       if (existingItem)
       {
         existingItem.quantity++  
       }
       else
       {
-        items.value.push({...wine, quantity:1})
+        items.value.push({
+          ...wine,
+           quantity: 1
+          })
       }
     }
+
     function removeFromCart(wineId)
     {
       items.alue = items.value.filter((item) => item.id !==wineId)  
@@ -74,7 +81,8 @@ export const useCartStore = defineStore('cart', () =>
         
     }
     
-  })
+  }
+)
     
     
                                          
