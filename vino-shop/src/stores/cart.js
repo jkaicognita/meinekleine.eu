@@ -1,7 +1,7 @@
 import {computed, ref} from 'vue'
 import {defineStrore} from 'pinia'
 
-export const userCartStore = defineStore('cart', () => 
+export const useCartStore = defineStore('cart', () => 
   {
     const items = ref([])
     function addToCart(wine)
